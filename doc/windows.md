@@ -11,15 +11,21 @@
 
 Azure へのアクセスを行うため、Visual Studio の画面の右上の **サインイン** をクリックし、Microsoft アカウントを使用してログインして下さい。
 
-![1](img-windows/1.png?raw=true)
+|1|
+|--|
+|<img src="img-windows/1.png?raw=true" max-width="320px">|
 
 1. サインイン をクリック
 
-![2](img-windows/2.png?raw=true)
+|2|
+|--|
+|<img src="img-windows/2.png?raw=true" max-width="320px">|
 
 2. Imagine が登録されているMicrosoft アカウントでログイン
 
-![3](img-windows/3.png?raw=true)
+|3|
+|--|
+|<img src="img-windows/3.png?raw=true" max-width="320px">|
 
 3. アカウント名が表示されればOK
 
@@ -29,15 +35,21 @@ Azure Mobile Apps を使用する Xamarin.Forms のプロジェクトを作成�
 
 ツールバーより **ファイル** → **新規作成** → **プロジェクト** と選択して下さい。
 
-![4](img-windows/4.png?raw=true)
+|4|
+|--|
+|<img src="img-windows/4.png?raw=true" max-width="320px">|
 
 左ペインを **インストール済み** → **テンプレート** → **Visual C#** → **Cross-Platform** の順番で開き、右ペイン内の **Cross Platform App (Xamarin)** を選択して下さい。
 
-![5](img-windows/5.png?raw=true)
+|5|
+|--|
+|<img src="img-windows/5.png?raw=true" max-width="320px">|
 
 ダイアログ下部の **名前** を任意の名前に変更し、**OK** をクリックします。
 
-![6](img-windows/6.png?raw=true)
+|6|
+|--|
+|<img src="img-windows/6.png?raw=true" max-width="320px">|
 
 次に表示されるダイアログでは、作成する Xamarin のプロジェクトの初期設定を決めることができます。
 
@@ -62,7 +74,9 @@ Azure Mobile Apps を使用する Xamarin.Forms のプロジェクトを作成�
 
 次の画面では、Azure へホスティングする Mobile Apps バックエンドの構成などを入力します。
 
-![8](img-windows/8.png?raw=true)
+|8|
+|--|
+|<img src="img-windows/8.png?raw=true" max-width="320px">|
 
 **Mobile App の名前** の欄に任意の名前を入力して下さい。
 （これがAzure上での App Service の名前になります。）
@@ -71,7 +85,9 @@ Azure Mobile Apps を使用する Xamarin.Forms のプロジェクトを作成�
 
 **リソースグループ** の右の **新規作成** をクリックします。
 
-![9](img-windows/9.png?raw=true)
+|9|
+|--|
+|<img src="img-windows/9.png?raw=true" max-width="320px">|
 
 任意の名前（先程の **Mobile App の名前** と同じだとわかりやすい）を入力し、**OK** をクリックします。
 
@@ -85,7 +101,9 @@ Azure Mobile Apps を使用する Xamarin.Forms のプロジェクトを作成�
 
 **App Service プラン** の右の **新規作成** をクリックします。
 
-![10](img-windows/10.png?raw=true)
+|10|
+|--|
+|<img src="img-windows/10.png?raw=true" max-width="320px">|
 
 **App Service プラン** に任意の名前（先程の **Mobile App の名前** と同じだとわかりやすい）を入力します。
 
@@ -95,13 +113,17 @@ Azure Mobile Apps を使用する Xamarin.Forms のプロジェクトを作成�
 
 Azure へのデプロイが行われるので、しばらく待機します。
 
-![11](img-windows/11.png?raw=true)
+|11|
+|--|
+|<img src="img-windows/11.png?raw=true" max-width="320px">|
 
 デプロイが完了すると、Xamarin.Forms のプロジェクト及び Mobile App Service のプロジェクトが作成されます。
 
 UWPに関するダイアログが表示された場合は **OK** をクリックしてください。
 
-![12](img-windows/12.png?raw=true)
+|12|
+|--|
+|<img src="img-windows/12.png?raw=true" max-width="320px">|
 
 パッケージの復元が行われるので、しばらく待機します。
 
@@ -111,17 +133,23 @@ UWPに関するダイアログが表示された場合は **OK** をクリック
 
 ソリューションエクスプローラーから、**[プロジェクト名].MobileAppService** を右クリックし、**公開** をクリックします。
 
-![13](img-windows/13.png?raw=true)
+|13|
+|--|
+|<img src="img-windows/13.png?raw=true" max-width="320px">|
 
 中央に表示される画面で **Microsoft Azure App Service(A)** を選択し、**既存のものを選択** を選択した上で **発行** をクリックします。
 
-![14](img-windows/14.png?raw=true)
+|14|
+|--|
+|<img src="img-windows/14.png?raw=true" max-width="320px">|
 
 表示さてたダイアログから、先程作成した App Service を選択し、**OK** をクリックします。
 
 しばらく待機すると自動でブラウザが開き、以下のようなページが表示されます。
 
-![15](img-windows/15.png?raw=true)
+|15|
+|--|
+|<img src="img-windows/15.png?raw=true" max-width="320px">|
 
 これで、デプロイは完了です。
 
@@ -129,31 +157,43 @@ UWPに関するダイアログが表示された場合は **OK** をクリック
 
 以降、デプロイを再度おこなう場合は、プロジェクトを右クリックして **公開** をクリックした画面で、 **発行** をクリックすればOKです。
 
-![16](img-windows/16.png?raw=true)
+|16|
+|--|
+|<img src="img-windows/16.png?raw=true" max-width="320px">|
 
 ### 4.2 Android プロジェクトの実行
 
 Visual Studio の画面上部で、**[プロジェクト名].Android** が選択されていることを確認し、右の▶をクリックしてください。
 
-![17](img-windows/17.png?raw=true)
+|17|
+|--|
+|<img src="img-windows/17.png?raw=true" max-width="320px">|
 
 Android 上でアプリが立ち上がれば成功です。
 
-![18](img-windows/18.png?raw=true)
+|18|
+|--|
+|<img src="img-windows/18.png?raw=true" max-width="320px">|
 
 ### 4.3 Android アプリを動かしてみる
 
 **NOT NOW** を選択し、次の画面でツールバー上の **ADD ITEM** をタップします。
 
-![19](img-windows/19.png?raw=true)
+|19|
+|--|
+|<img src="img-windows/19.png?raw=true" max-width="320px">|
 
 アイテムの入力画面が開くので、**SAVE** をクリックします。
 
-![20](img-windows/20.png?raw=true)
+|20|
+|--|
+|<img src="img-windows/20.png?raw=true" max-width="320px">|
 
 元の画面のリストに、追加したアイテムが表示されていればOKです。
 
-![21](img-windows/21.png?raw=true)
+|21|
+|--|
+|<img src="img-windows/21.png?raw=true" max-width="320px">|
 
 ## 5. 認証を行う
 
@@ -171,19 +211,27 @@ Azure App Service では、OAuth などを使用した認証を簡単に追加�
 
 ページ左のリストから **App Service** をクリックします。
 
-![22](img-windows/22.png?raw=true)
+|22|
+|--|
+|<img src="img-windows/22.png?raw=true" max-width="320px">|
 
 リスト内から前の章で入力した名前をクリックします。
 
-![23](img-windows/23.png?raw=true)
+|23|
+|--|
+|<img src="img-windows/23.png?raw=true" max-width="320px">|
 
 画面右側に選択した App Service の情報が表示されるので、左下にある **認証/承認** をクリックします。
 
-![24](img-windows/24.png?raw=true)
+|24|
+|--|
+|<img src="img-windows/24.png?raw=true" max-width="320px">|
 
 切り替わった画面で、 **App Service 認証** を **オン** に切り替えます
 
-![25](img-windows/25.png?raw=true)
+|25|
+|--|
+|<img src="img-windows/25.png?raw=true" max-width="320px">|
 
 **要求が認証されない場合に実行するアクション** を **Microsoft アカウントでのログイン** に変更し、下部の Microsoft の **構成されていません** の部分をクリックします。
 
@@ -193,27 +241,37 @@ Azure App Service では、OAuth などを使用した認証を簡単に追加�
 
 [https://apps.dev.microsoft.com/?mkt=ja-jp#/appList](https://apps.dev.microsoft.com/?mkt=ja-jp#/appList)
 
-![26](img-windows/26.png?raw=true)
+|26|
+|--|
+|<img src="img-windows/26.png?raw=true" max-width="320px">|
 
 ここでは、Microsoft アカウントで認証を行うためのアプリケーションの作成を行います。
 
 ページ右上の **アプリの追加** をクリックします。
 
-![27](img-windows/27.png?raw=true)
+|27|
+|--|
+|<img src="img-windows/27.png?raw=true" max-width="320px">|
 
 **Application Name** を入力し、**Create** をクリックします。
 
-![28](img-windows/28.png?raw=true)
+|28|
+|--|
+|<img src="img-windows/28.png?raw=true" max-width="320px">|
 
 表示されている情報の中の、**アプリケーションID** をメモします。
 
 次に、**プラットフォームの追加** をクリックします。
 
-![29](img-windows/29.png?raw=true)
+|29|
+|--|
+|<img src="img-windows/29.png?raw=true" max-width="320px">|
 
 出てくる画面では **Web** を選択してください。
 
-![30](img-windows/30.png?raw=true)
+|30|
+|--|
+|<img src="img-windows/30.png?raw=true" max-width="320px">|
 
 **リダイレクト URL** に以下の規則で入力してください。
 
@@ -223,7 +281,9 @@ Azure App Service では、OAuth などを使用した認証を簡単に追加�
 
 次に、**新しいパスワードの生成** をクリックします。
 
-![31](img-windows/31.png?raw=true)
+|31|
+|--|
+|<img src="img-windows/31.png?raw=true" max-width="320px">|
 
 画面上にパスワードが表示されるので、メモした上で **OK** をクリックしてください。
 
@@ -233,7 +293,9 @@ Azure App Service では、OAuth などを使用した認証を簡単に追加�
 
 Azure ポータルに戻り、**Microsoft アカウントの認証設定** の **クライアントID** と **クライアントシークレット** にそれぞれ先程のページで表示された **アプリケーションID** と **パスワード** を貼り付けます。
 
-![32](img-windows/32.png?raw=true)
+|32|
+|--|
+|<img src="img-windows/32.png?raw=true" max-width="320px">|
 
 入力が終わったら、下部の **OK** をクリックします。
 
@@ -243,7 +305,9 @@ Azure ポータルに戻り、**Microsoft アカウントの認証設定** の *
 
 Visual Studio に戻ります。
 
-![33](img-windows/33.png?raw=true)
+|33|
+|--|
+|<img src="img-windows/33.png?raw=true" max-width="320px">|
 
 はじめに、ソリューションエクスプローラーから、**[プロジェクト名].MobileAppService** プロジェクトの **Controller** → **ItemController.cs** を開きます。
 
@@ -269,7 +333,9 @@ Visual Studio に戻ります。
 
 次に、ソリューションエクスプローラーから、**[プロジェクト名]** プロジェクトを開き、**Services** → **AzureDataStore.cs** を開きます。
 
-![34](img-windows/34.png?raw=true)
+|34|
+|--|
+|<img src="img-windows/34.png?raw=true" max-width="320px">|
 
 `AzureDataStore` クラスの定義の直下にあるプロパティ **UseAuthentication** と **AuthProvider** を以下のように書き換えます。
 
@@ -289,11 +355,15 @@ Visual Studio に戻ります。
 起動時の画面で **SIGN IN** を選択すると Microsoft アカウントのサインイン画面に遷移します。
 
 
-![35](img-windows/35.png?raw=true)
+|35|
+|--|
+|<img src="img-windows/35.png?raw=true" max-width="320px">|
 
 Microsoft アカウントへのログインに成功すると、作成したアプリケーションとの連携許可の画面が表示されるので、**はい** をクリックします。
 
-![36](img-windows/36.png?raw=true)
+|36|
+|--|
+|<img src="img-windows/36.png?raw=true" max-width="320px">|
 
 # 6. API を追加してみる
 
@@ -303,15 +373,21 @@ Microsoft アカウントへのログインに成功すると、作成したア�
 
 はじめに、ソリューションエクスプローラーから、**[プロジェクト名].MobileAppService** プロジェクトの **Controller** を右クリックし、**追加** → **コントローラー** を選択します。
 
-![37](img-windows/37.png?raw=true)
+|37|
+|--|
+|<img src="img-windows/37.png?raw=true" max-width="320px">|
 
 ダイアログでは **Web API 2 コントローラー - 空** を選択します。
 
-![38](img-windows/38.png?raw=true)
+|38|
+|--|
+|<img src="img-windows/38.png?raw=true" max-width="320px">|
 
 名前の入力では、**TimeController** と入力します。
 
-![39](img-windows/39.png?raw=true)
+|39|
+|--|
+|<img src="img-windows/39.png?raw=true" max-width="320px">|
 
 生成された **TimeController** クラスに以下の using を追加します。
 
@@ -375,11 +451,15 @@ public string Get()
 
 次に、Azure Portal を開き、App Service を開きます。
 
-![40](img-windows/40.png?raw=true)
+|40|
+|--|
+|<img src="img-windows/40.png?raw=true" max-width="320px">|
 
 左サイドメニューから **アプリケーション設定** を開きます。
 
-![41](img-windows/41.png?raw=true)
+|41|
+|--|
+|<img src="img-windows/41.png?raw=true" max-width="320px">|
 
 右ペインの中にある **アプリ設定** の項目に以下のキーと値を追加します
 
@@ -486,6 +566,8 @@ GetTimeCommand = new Command(async () =>
  </ContentPage>
 ```
 
-![42](img-windows/42.png?raw=true)
+|42|
+|--|
+|<img src="img-windows/42.png?raw=true" max-width="320px">|
 
 このように、About ページに **GET TIME** ボタンが追加され、タップすると現在の時刻が表示されていればOKです。
