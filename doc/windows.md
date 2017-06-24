@@ -66,7 +66,7 @@ Azure Mobile Apps を使用する Xamarin.Forms のプロジェクトを作成�
 >   - 共有プロジェクト：ShardProjectによるコード共有を行う。`#if` ディレクティブなどを使用できる。
 >   - ポータブルクラスライブラリ（PCL）：PCLを使用してコード共有を行う。共有部分に Nuget のライブラリの参照を追加できる。
 >- Microsoft Azure
->    - クラウド内のホスト：テンプレートを **マスター/詳細** にした時のみ選択可能。Azure Mobile Apps を使用した MBaas を実現できる。
+>    - クラウド内のホスト：テンプレートを **マスター/詳細** にした時のみ選択可能。Azure Mobile Apps を使用した MBaas(モバイルバックエンドサービス) を実現できる。
 
 今回のハンズオンでは、**マスター/詳細・Xamarin.Forms・共有プロジェクト・クラウド内のホスト にチェック** の状態にしてください。
 
@@ -313,12 +313,21 @@ Visual Studio に戻ります。
 
 `namespace` 直下にある `[Authorize]` のコメントアウトを外します。
 
-```diff
+【変更前】
+```cs
+namespace AMAHandson.MobileAppService.Controllers
+ {
+     // TODO: Uncomment [Authorize] attribute to require user be authenticated to access Item(s).
+     // [Authorize]
+     public class ItemController : TableController<Item>
+     {
+```
+【変更後】
+```cs
  namespace AMAHandson.MobileAppService.Controllers
  {
      // TODO: Uncomment [Authorize] attribute to require user be authenticated to access Item(s).
--    // [Authorize]
-+    [Authorize]
+     [Authorize]
      public class ItemController : TableController<Item>
      {
 ```
@@ -339,13 +348,21 @@ Visual Studio に戻ります。
 
 `AzureDataStore` クラスの定義の直下にあるプロパティ **UseAuthentication** と **AuthProvider** を以下のように書き換えます。
 
-```diff
+【変更前】
+```cs
  	public class AzureDataStore : IDataStore<Item>
  	{
--         public bool UseAuthentication => false;
--         public MobileServiceAuthenticationProvider AuthProvider => MobileServiceAuthenticationProvider.Facebook;
-+         public bool UseAuthentication => true;
-+         public MobileServiceAuthenticationProvider AuthProvider => MobileServiceAuthenticationProvider.MicrosoftAccount;
+　         public bool UseAuthentication => false;
+　         public MobileServiceAuthenticationProvider AuthProvider => MobileServiceAuthenticationProvider.Facebook;
+
+         bool isInitialized;
+```
+【変更後】
+```cs
+ 	public class AzureDataStore : IDataStore<Item>
+ 	{
+　         public bool UseAuthentication => true;
+ 　        public MobileServiceAuthenticationProvider AuthProvider => MobileServiceAuthenticationProvider.MicrosoftAccount;
 
          bool isInitialized;
 ```
@@ -403,7 +420,7 @@ using Microsoft.Azure.Mobile.Server.Config;
 
 ここまでで、以下のようになっていればOKです。
 
-```TimeController.cs
+```cs
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -440,10 +457,17 @@ public string Get()
 
 `ConfigureMobileApp` メソッド内の `new MobileAppConfiguration()` を呼び出している部分を以下のように変更します。
 
-```diff
+【変更前】
+```cs
  new MobileAppConfiguration()
      .UseDefaultConfiguration()
-+    .MapApiControllers()
+     .ApplyTo(config);
+```
+【変更後】
+```cs
+ new MobileAppConfiguration()
+     .UseDefaultConfiguration()
+     .MapApiControllers()
      .ApplyTo(config);
 ```
 
@@ -533,33 +557,31 @@ GetTimeCommand = new Command(async () =>
 
 ソリューションエクスプローラーから、**[プロジェクト名]** プロジェクトの **Views** → **AboutPage.xaml** を開きます。
 
-64-65行目に以下のコードを挿入します。
+64-65行目に以下のコードをコピペして下さい。
 
+【コピペ】
 ```xaml
 <Button Margin="0,10,0,0"
-        Text="Get time" 
-        Command="{Binding GetTimeCommand}"
-        BackgroundColor="{StaticResource Primary}"
-        TextColor="White"/>
-<Label  Text="{Binding Time}"
-        TextColor="Black"/>
+                 Text="Get time" 
+                 Command="{Binding GetTimeCommand}"
+                 BackgroundColor="{StaticResource Primary}"
+                 TextColor="White"/>
 ```
+コピペした場合**AboutPage.xaml**の64-65行目付近のコードは以下のようになるはずです。
 
-以下の場所に挿入となります。
-
-```diff
+```xaml
          <Button Margin="0,10,0,0"
                  Text="Learn more" 
                  Command="{Binding OpenWebCommand}"
                  BackgroundColor="{StaticResource Primary}"
                  TextColor="White"/>
-+        <Button Margin="0,10,0,0"
-+                Text="Get time" 
-+                Command="{Binding GetTimeCommand}"
-+                BackgroundColor="{StaticResource Primary}"
-+                TextColor="White"/>
-+        <Label  Text="{Binding Time}"
-+                TextColor="Black"/>
+         <Button Margin="0,10,0,0"
+                 Text="Get time" 
+                 Command="{Binding GetTimeCommand}"
+                 BackgroundColor="{StaticResource Primary}"
+                 TextColor="White"/>
+         <Label  Text="{Binding Time}"
+                 TextColor="Black"/>
        </StackLayout>
      </ScrollView>
    </Grid>
